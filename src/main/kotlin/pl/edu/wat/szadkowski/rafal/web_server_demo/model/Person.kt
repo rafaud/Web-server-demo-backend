@@ -1,6 +1,7 @@
 package pl.edu.wat.szadkowski.rafal.web_server_demo.model
 
 import pl.edu.wat.szadkowski.rafal.web_server_demo.model.enum.Sex
+import java.util.UUID
 import javax.persistence.Entity
 import javax.persistence.EnumType
 import javax.persistence.Enumerated
@@ -12,9 +13,9 @@ import javax.persistence.Id
 data class Person(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    var id: Long? = null,
-    val name: String,
-    val surname: String,
+    var id: UUID? = null,
+    var name: String,
+    var surname: String,
     @Enumerated(EnumType.STRING)
-    val sex: Sex,
+    var sex: Sex,
 )
